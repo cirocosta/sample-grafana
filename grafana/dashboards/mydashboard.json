@@ -12,9 +12,10 @@
             }
         ]
     },
-    "editable": true,
+    "editable": false,
     "gnetId": null,
-    "graphTooltip": 1,
+    "graphTooltip": 0,
+    "hideControls": false,
     "id": null,
     "links": [],
     "panels": [
@@ -26,7 +27,7 @@
             "datasource": null,
             "fill": 1,
             "gridPos": {
-                "h": 7,
+                "h": 8,
                 "w": 24,
                 "x": 0,
                 "y": 0
@@ -55,18 +56,17 @@
             "steppedLine": false,
             "targets": [
                 {
-                    "$$hashKey": "object:223",
-                    "expr": "node_memory_MemAvailable",
+                    "expr": "node_cpu{mode=\"user\"}",
                     "format": "time_series",
                     "intervalFactor": 1,
-                    "legendFormat": "{{ instance }}",
+                    "legendFormat": "{{ cpu }}",
                     "refId": "A"
                 }
             ],
             "thresholds": [],
             "timeFrom": null,
             "timeShift": null,
-            "title": "Memory Available",
+            "title": "cpu",
             "tooltip": {
                 "shared": true,
                 "sort": 0,
@@ -82,12 +82,11 @@
             },
             "yaxes": [
                 {
-                    "decimals": null,
-                    "format": "decbytes",
-                    "label": "",
+                    "format": "short",
+                    "label": null,
                     "logBase": 1,
                     "max": null,
-                    "min": "0",
+                    "min": null,
                     "show": true
                 },
                 {
@@ -108,7 +107,7 @@
         "list": []
     },
     "time": {
-        "from": "now-30m",
+        "from": "now-15m",
         "to": "now"
     },
     "timepicker": {
@@ -138,6 +137,6 @@
     },
     "timezone": "",
     "title": "mydashboard",
-    "uid": "nscNzgqkz",
-    "version": 2
+    "uid": "dw2aBiqkz",
+    "version": 1
 }

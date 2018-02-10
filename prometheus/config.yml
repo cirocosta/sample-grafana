@@ -4,9 +4,16 @@ global:
 
 scrape_configs:
 
+  # `node` takes care of scraping node_exporter instances
+  # that gives us all sorts of information about the host
+  # in which the exporter runs.
   - job_name: 'node'
-
     static_configs:
+
+      # Given that we're only testing a single instance that
+      # we know the address very well, statically set it here
+      # with a custom instance label so that it looks better
+      # in the ui (and metrics).
       - targets:
         - 'node_exporter:9100'
         labels:
